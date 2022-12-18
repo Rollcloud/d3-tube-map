@@ -1,10 +1,12 @@
 {
   "stations": {
     "StationA": {
-      "label": "Station A"
+      "label": "Station A",
+      "coords": [23, -4]
     },
     "StationB": {
-      "label": "Station B"
+      "label": "Station B",
+      "coords": [31, 2]
     }
   },
   "lines": [
@@ -14,7 +16,6 @@
       "shiftCoords": [0, 0],
       "nodes": [
         {
-          "coords": [23, -4],
           "name": "StationA",
           "labelPos": "N"
         },
@@ -25,7 +26,6 @@
           "coords": [31, -3]
         },
         {
-          "coords": [31, 2],
           "name": "StationB",
           "labelPos": "E"
         }

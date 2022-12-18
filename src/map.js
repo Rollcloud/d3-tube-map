@@ -1,7 +1,13 @@
 import * as d3 from "d3";
 
 import { directionVector, interchangeShift, normalize } from "./directions";
-import { interchange, line, populateLineDirections, station } from "./curve";
+import {
+  interchange,
+  line,
+  populateLineCoordinates,
+  populateLineDirections,
+  station,
+} from "./curve";
 
 import lineList from "./lines";
 import stationList from "./stations";
@@ -311,6 +317,7 @@ export default function () {
   }
 
   function transformData(data) {
+    data.lines.forEach((line) => populateLineCoordinates(line, data.stations));
     data.lines.forEach((line) => populateLineDirections(line));
     if (data.river !== undefined) {
       populateLineDirections(data.river);

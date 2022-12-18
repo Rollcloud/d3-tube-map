@@ -110,6 +110,19 @@ export function station(
 }
 
 /**
+ * Determine the coordinates of each node
+ * along the given line, and save under the `coords` attribute.
+ */
+export function populateLineCoordinates(line, stations) {
+  for (let nNode = 0; nNode < line.nodes.length; nNode++) {
+    let currNode = line.nodes[nNode];
+
+    if (currNode.coords === undefined && currNode.name !== undefined)
+      currNode.coords = stations[currNode.name].coords;
+  }
+}
+
+/**
  * Determine the compass bearing of the tangent to the line at each node
  * along the given line, and save under the `dir` attribute.
  */
